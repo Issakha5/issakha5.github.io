@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issakha Diallo | Expert Backend & Odoo</title>
+    
+    <!-- CDN : Icônes Font Awesome et Police futuriste JetBrains Mono / Inter -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /*--- VARIABLES CYBERPUNK ---*/
+        :root {
+            --bg-darker: #070a13;
+            --bg-dark: #0f1322;
+            --bg-card: #151b30;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --neon-cyan: #00f2fe;
+            --neon-purple: #4facfe;
+            --neon-pink: #f35588;
+            --border: #1e293b;
+            --glow: 0 0 20px rgba(0, 242, 254, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-darker);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /*--- EFFETS DE TEXTE ET DEGRADE ---*/
+        .text-gradient {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /*--- NAVBAR FUTURISTE ---*/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(7, 10, 19, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -1px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+        }
+
+        /*--- SECTIONS ARCHITECTURE ---*/
+        section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+        }
+
+        /*--- HERO BANNER ---*/
+        .hero {
+            min-height: 95vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Grille décorative en arrière-plan */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            color: var(--neon-cyan);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        /*--- BOUTONS LUMINEUX ---*/
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-cyber {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+            color: #000000;
+            box-shadow: var(--glow);
+        }
+
+        .btn-cyber:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--neon-cyan);
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(0, 242, 254, 0.05);
+            box-shadow: var(--glow);
+            transform: translateY(-2px);
+        }
+
+        /*--- CARTES SKILLS CYBER ---*/
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.3);
+            box-shadow: var(--glow);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .skill-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /*--- CARTES PROJETS CYBER ---*/
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(79, 172, 254, 0.3);
+            box-shadow: 0 0 25px rgba(79, 172, 254, 0.15);
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .project-tags span {
+            font-size: 0.75rem;
+            background-color: rgba(7, 10, 19, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            color: var(--neon-purple);
+            font-weight: 600;
+        }
+
+        .project-link {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--neon-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        /*--- FOOTER & RESPONSIVE ---*/
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background-color: var(--bg-darker);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(243, 85, 136, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            section { padding: 5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BARRE DE CONTROLE -->
+       <header>
+        <nav class="nav-container">
+            <a href="#" class="logo mono">&lt;ISSAKHA<span class="text-gradient">_</span>/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="mono">// 01. Accueil</a></li>
+                <li><a href="#skills" class="mono">// 02. Skills</a></li>
+                <li><a href="#projects" class="mono">// 03. Projets</a></li>
+                <li><a href="#contact" class="mono">// 04. Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- CONTENU PRINCIPAL INTERACTIF -->
+    <main>
+        
+        <!-- INTRO HERO BANNER -->
+        <section class="hero" id="about">
+            <div class="hero-tag mono">// ARCHITECTE LOGICIEL / INGENIEUR BACKEND</div>
+            <h1>Bonjour, je suis<br><span class="text-gradient">Issakha Diallo</span></h1>
+            <p>Spécialiste dans la conception d'architectures backend robustes, de systèmes de données évolutifs et d'intégrations ERP complexes sous Odoo. J'écris du code performant et automatisé.</p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-cyber">Explorer mes projets <i class="fa-solid fa-terminal"></i></a>
+                <a href="https://github.com" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> Terminal GitHub</a>
+            </div>
+        </section>
+
+        <!-- COMPETENCES TECHNIQUES GLOOM -->
+        <section id="skills">
+            <h2 class="section-title mono"><span class="text-gradient">01.</span> Stack Technologique</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-python"></i>
+                    <h3 class="mono">Backend Dev</h3>
+                    <p>Développement asynchrone ultra-rapide avec Python, FastAPI et Django REST framework.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3 class="mono">Odoo Integration</h3>
+                    <p>Création de modules sur mesure, modélisation de bases de données et processus métiers ERP complexes.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-server"></i>
+                    <h3 class="mono">Cloud & DevOps</h3>
+                    <p>Conteneurisation via Docker, gestion Linux avancée et workflows d'automatisation CI/CD.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3 class="mono">Web Stack</h3>
+                    <p>Interfaces web réactives connectées aux APIs en combinant JavaScript, HTML5 et CSS moderne.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROJETS TERMINAL -->
+        <section id="projects">
+            <h2 class="section-title mono"><span class="text-gradient">02.</span> Répertoire Projets</h2>
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">Odoo Enterprise Core</h3>
+                        <p>Déploiement et surcharge complète de flux ERP applicatifs pour automatiser la logistique et la comptabilité d'une structure industrielle.</p>
+                        <div class="project-tags">
+                            <span class="mono">Odoo</span>
+                            <span class="mono">Python</span>
+                            <span class="mono">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">Async REST Microservice</h3>
+                        <p>Mise en place d'une infrastructure d'API sous FastAPI optimisée pour les requêtes concurrentes massives avec base de données isolée.</p>
+                        <div class="project-tags">
+                            <span class="mono">FastAPI</span>
+                            <span class="mono">Docker</span>
+                            <span class="mono">Redis</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">Automation CI/CD Pipeline</h3>
+                        <p>Scripts de livraison continue gérant le linting, le testing unitaire automatique et le déploiement automatique sur serveur distant.</p>
+                        <div class="project-tags">
+                            <span class="mono">GitHub Actions</span>
+                            <span class="mono">Linux</span>
+                            <span class="mono">Shell</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION DE CONTACT PROTOCOLE -->
+        <section id="contact" style="text-align: center; max-width: 650px; padding-bottom: 10rem;">
+            <h2 class="section-title mono" style="display: block; margin: 0 auto 2rem;"><span class="text-gradient">03.</span> Initialiser Connexion</h2>
+            <p style="color: var(--text-muted); margin-bottom: 3rem;">Besoin d'un consultant expert pour concevoir vos architectures applicatives ou intégrer vos briques ERP ? Établissons un canal de discussion.</p>
+            <a href="mailto:votre.email@exemple.com" class="btn btn-cyber" style="padding: 1.1rem 2.5rem;"><i class="fa-solid fa-envelope"></i> Envoyer un Ping</a>
+        </section>
+
+    </main>
+
+    <!-- PIED DE PAGE TERMINAL -->
+    <footer>
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" title="GitHub Core"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn Network"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p class="mono" style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 Issakha Diallo // Tous systèmes opérationnels.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
