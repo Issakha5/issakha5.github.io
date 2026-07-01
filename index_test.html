@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issakha Diallo | Expert Backend & Odoo</title>
-    
+
     <!-- CDN : Icônes Font Awesome et Police futuriste JetBrains Mono / Inter -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <style>
         /*--- VARIABLES CYBERPUNK ---*/
@@ -134,8 +137,11 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 40px 40px;
             z-index: -1;
         }
@@ -343,15 +349,21 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            section { padding: 5rem 1.5rem; }
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAV BARRE DE CONTROLE -->
-       <header>
+    <header>
         <nav class="nav-container">
             <a href="#" class="logo mono">&lt;ISSAKHA<span class="text-gradient">_</span>/&gt;</a>
             <ul class="nav-links">
@@ -364,15 +376,17 @@
     </header>
     <!-- CONTENU PRINCIPAL INTERACTIF -->
     <main>
-        
+
         <!-- INTRO HERO BANNER -->
         <section class="hero" id="about">
             <div class="hero-tag mono">// ARCHITECTE LOGICIEL / INGENIEUR BACKEND</div>
             <h1>Bonjour, je suis<br><span class="text-gradient">Issakha Diallo</span></h1>
-            <p>Spécialiste dans la conception d'architectures backend robustes, de systèmes de données évolutifs et d'intégrations ERP complexes sous Odoo. J'écris du code performant et automatisé.</p>
+            <p>Spécialiste dans la conception d'architectures backend robustes, de systèmes de données évolutifs et
+                d'intégrations ERP complexes sous Odoo. J'écris du code performant et automatisé.</p>
             <div class="btn-group">
                 <a href="#projects" class="btn btn-cyber">Explorer mes projets <i class="fa-solid fa-terminal"></i></a>
-                <a href="https://github.com" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> Terminal GitHub</a>
+                <a href="https://github.com" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i>
+                    Terminal GitHub</a>
             </div>
         </section>
 
@@ -388,7 +402,8 @@
                 <div class="skill-card">
                     <i class="fa-solid fa-layer-group"></i>
                     <h3 class="mono">Odoo Integration</h3>
-                    <p>Création de modules sur mesure, modélisation de bases de données et processus métiers ERP complexes.</p>
+                    <p>Création de modules sur mesure, modélisation de bases de données et processus métiers ERP
+                        complexes.</p>
                 </div>
                 <div class="skill-card">
                     <i class="fa-solid fa-server"></i>
@@ -403,57 +418,124 @@
             </div>
         </section>
 
-        <!-- SECTION PROJETS TERMINAL -->
+        <!-- SECTION PROJETS TERMINAL - PARTIE 1 -->
         <section id="projects">
             <h2 class="section-title mono"><span class="text-gradient">02.</span> Répertoire Projets</h2>
             <div class="projects-grid">
-                <!-- Projet 1 -->
+
+                <!-- Projet 1 : L'implémentation Odoo pour GAINDE 2000 -->
                 <div class="project-card">
                     <div class="project-content">
-                        <h3 class="mono">Odoo Enterprise Core</h3>
-                        <p>Déploiement et surcharge complète de flux ERP applicatifs pour automatiser la logistique et la comptabilité d'une structure industrielle.</p>
+                        <h3 class="mono">ERP Odoo Enterprise (GAINDE 2000)</h3>
+                        <p>Transition d'un système fragmenté vers une architecture ERP centralisée. Modélisation et
+                            automatisation multi-modules (Finance, RH, Achats, Ventes, Projets).</p>
                         <div class="project-tags">
                             <span class="mono">Odoo</span>
                             <span class="mono">Python</span>
                             <span class="mono">PostgreSQL</span>
-                        </div>
-                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i class="fa-solid fa-arrow-right-long"></i></a>
-                    </div>
-                </div>
-                <!-- Projet 2 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="mono">Async REST Microservice</h3>
-                        <p>Mise en place d'une infrastructure d'API sous FastAPI optimisée pour les requêtes concurrentes massives avec base de données isolée.</p>
-                        <div class="project-tags">
-                            <span class="mono">FastAPI</span>
                             <span class="mono">Docker</span>
-                            <span class="mono">Redis</span>
                         </div>
-                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i class="fa-solid fa-arrow-right-long"></i></a>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                 </div>
-                <!-- Projet 3 -->
+
+                <!-- Projet 2 : Ton API de Transport de Marchandises en temps réel -->
                 <div class="project-card">
                     <div class="project-content">
-                        <h3 class="mono">Automation CI/CD Pipeline</h3>
-                        <p>Scripts de livraison continue gérant le linting, le testing unitaire automatique et le déploiement automatique sur serveur distant.</p>
+                        <h3 class="mono">Real-time Freight API & WebSockets</h3>
+                        <p>Conception d'une plateforme de mise en relation clients/livreurs. Pipeline asynchrone pour
+                            l'expédition de marchandises et la gestion des flux de données.</p>
                         <div class="project-tags">
-                            <span class="mono">GitHub Actions</span>
-                            <span class="mono">Linux</span>
-                            <span class="mono">Shell</span>
+                            <span class="mono">Django REST</span>
+                            <span class="mono">WebSockets</span>
+                            <span class="mono">Celery</span>
+                            <span class="mono">React</span>
                         </div>
-                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i class="fa-solid fa-arrow-right-long"></i></a>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                 </div>
+                <!-- SECTION PROJETS TERMINAL - PARTIE 2 -->
+                <!-- Projet 3 : Le robot automatique d'emails (ASSISTEUR) -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">Async Email Parsing Engine (ASSISTEUR)</h3>
+                        <p>Moteur d'automatisation pour la réception, le parsing de structures de données complexes et
+                            le routage intelligent d'emails provenant d'organismes financiers.</p>
+                        <div class="project-tags">
+                            <span class="mono">Django</span>
+                            <span class="mono">Celery</span>
+                            <span class="mono">HTMX</span>
+                            <span class="mono">GitLab CI</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projet 4 : Cabinet Dentaire (Nouveau) -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">Dental Workflow Engine & Account Automation</h3>
+                        <p>Module Odoo sur mesure pour cabinet médical. Modélisation de grilles tarifaires de soins et
+                            extension de la comptabilité native pour l'automatisation de la facturation patient.</p>
+                        <div class="project-tags">
+                            <span class="mono">Odoo ERP</span>
+                            <span class="mono">Python</span>
+                            <span class="mono">XML</span>
+                            <span class="mono">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <!-- SECTION PROJETS TERMINAL - PARTIE 3 -->
+                <!-- Projet 5 : Le projet SAP WEB avec tests et CI/CD -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">SAP Web & Automation CI/CD</h3>
+                        <p>Refactoring global, restructuration d'architecture web et mise en place d'une suite de tests
+                            unitaires automatisés via un pipeline d'intégration continue.</p>
+                        <div class="project-tags">
+                            <span class="mono">Django</span>
+                            <span class="mono">ReactJs</span>
+                            <span class="mono">GitHub Actions</span>
+                            <span class="mono">Docker</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projet 6 : L'application Douanes OTR / GED Côte d'Ivoire -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="mono">Custom Customs App (OTR / GED)</h3>
+                        <p>Développement d'un système d'évaluation de véhicules et d'une GED d'envergure nationale
+                            intégrant des règles métiers douanières complexes et Alfresco.</p>
+                        <div class="project-tags">
+                            <span class="mono">Odoo</span>
+                            <span class="mono">Python</span>
+                            <span class="mono">Alfresco</span>
+                            <span class="mono">JavaScript</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="project-link mono">src_code.sh <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- SECTION DE CONTACT PROTOCOLE -->
         <section id="contact" style="text-align: center; max-width: 650px; padding-bottom: 10rem;">
-            <h2 class="section-title mono" style="display: block; margin: 0 auto 2rem;"><span class="text-gradient">03.</span> Initialiser Connexion</h2>
-            <p style="color: var(--text-muted); margin-bottom: 3rem;">Besoin d'un consultant expert pour concevoir vos architectures applicatives ou intégrer vos briques ERP ? Établissons un canal de discussion.</p>
-            <a href="mailto:votre.email@exemple.com" class="btn btn-cyber" style="padding: 1.1rem 2.5rem;"><i class="fa-solid fa-envelope"></i> Envoyer un Ping</a>
+            <h2 class="section-title mono" style="display: block; margin: 0 auto 2rem;"><span
+                    class="text-gradient">03.</span> Initialiser Connexion</h2>
+            <p style="color: var(--text-muted); margin-bottom: 3rem;">Besoin d'un consultant expert pour concevoir vos
+                architectures applicatives ou intégrer vos briques ERP ? Établissons un canal de discussion.</p>
+            <a href="mailto:votre.email@exemple.com" class="btn btn-cyber" style="padding: 1.1rem 2.5rem;"><i
+                    class="fa-solid fa-envelope"></i> Envoyer un Ping</a>
         </section>
 
     </main>
@@ -463,12 +545,14 @@
         <div class="footer-container">
             <div class="social-links">
                 <a href="https://github.com" target="_blank" title="GitHub Core"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" title="LinkedIn Network"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn Network"><i
+                        class="fa-brands fa-linkedin"></i></a>
             </div>
-            <p class="mono" style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 Issakha Diallo // Tous systèmes opérationnels.</p>
+            <p class="mono" style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 Issakha Diallo // Tous
+                systèmes opérationnels.</p>
         </div>
     </footer>
 
 </body>
-</html>
 
+</html>
